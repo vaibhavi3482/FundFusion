@@ -56,7 +56,7 @@ const CompareMutualFunds = ({ user, setUser }) => {
     e.preventDefault();
     try {
       console.log(search);
-      const data = await axios.get(`http://localhost:5000/api/data/search/${search}`);
+      const data = await axios.get(process.env.REACT_APP_SERVER_URL + `/api/data/search/${search}`);
       setMFData([...mfData, data.data]);
       // console.log(data);
     }
@@ -81,7 +81,7 @@ const CompareMutualFunds = ({ user, setUser }) => {
   useEffect(() => {
     const getData = setTimeout(() => {
       axios
-        .get(`http://localhost:5000/api/data/query/${search}`)
+        .get(process.env.REACT_APP_SERVER_URL+ `/api/data/query/${search}`)
         .then((response) => {
           // console.log(response.data);
           const tp = [];
