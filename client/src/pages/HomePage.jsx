@@ -18,7 +18,7 @@ const HomePage = ({ user, setUser }) => {
         <>
             <Navbar user={user} setUser={setUser} />
             <div id="wlc">
-                <div id="wlc_hd">Welcome to FundFusion</div>
+                <div id="wlc_hd">Welcome to FundVisor</div>
                 <p>Your Financial Planning Companion!</p>
                 <div id="wlc_in">
                     <PieChart

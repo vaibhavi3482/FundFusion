@@ -52,11 +52,14 @@ const CompareMutualFunds = ({ user, setUser }) => {
     preProcess(mfData, fundName, setFundName, fundDetails, setFundDetails, returns, setReturns, prosCons, setProsCons, holdings, setHoldings, fundManager, setFundManager, fund, setFund);
   }, [mfData]);
 
+// Mutual Fund data add
   const add = async (e) => {
     e.preventDefault();
     try {
       console.log(search);
       const data = await axios.get(process.env.REACT_APP_SERVER_URL + `/api/data/search/${search}`);
+
+      // destructuring is done, keeping the previous data as it is and added new data. 
       setMFData([...mfData, data.data]);
       // console.log(data);
     }
@@ -94,9 +97,9 @@ const CompareMutualFunds = ({ user, setUser }) => {
         .catch((error) => {
           console.log(error);
         });
-    }, 2000)
+    }, 2000) // 2 secs debouncing for minimizing  calls
     return () => clearTimeout(getData)
-  }, [search])
+  }, [search]) //get data in search bar
 
   const rows = [
     "Fund Details",

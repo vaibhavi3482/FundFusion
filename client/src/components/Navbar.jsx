@@ -70,7 +70,7 @@ function Navbar({user,setUser}) {
                             textDecoration: "none",
                         }}
                     >
-                        FundFusion
+                        FundVisor
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
